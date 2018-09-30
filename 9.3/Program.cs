@@ -27,6 +27,8 @@ namespace _9._3
 				}
 				return middleNum / arrayDelegate.Length;
 			};
+			Console.WriteLine(main(arrayDelegate));
+			Console.Read();
 		}
 	}
 
