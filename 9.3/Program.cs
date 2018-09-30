@@ -18,7 +18,7 @@ namespace _9._3
 				MyDelegates.LittleDelegate,
 				MyDelegates.LittleDelegate
 			};
-			MainDelegete main = (ChildDelegete[] a) =>
+			MainDelegete main = delegate(ChildDelegete[] a) 
 			{
 				int middleNum = 0;
 				for (int i = 0; i < arrayDelegate.Length; i++)
@@ -38,10 +38,6 @@ namespace _9._3
 			return rd.Next();
 		}
 
-		static int LittleDelegate()
-		{
-			Random rd = new Random();
-			return rd.Next();
-		}
+		
 	}
 }
