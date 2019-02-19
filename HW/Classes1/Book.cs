@@ -1,57 +1,68 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HW.Classes1
 {
 
-	class Book
-	{
-		public Book(string bookName, string autor , string Content)
-		{
-			book = bookName;
-		}
+    class Book
+    {
+        private Title _title;
+        Author _author;
+        Content _content;
 
-		string book;
-		string autor;
-		string Content;
+        public Book(string bookName, string autor, string content)
+        {
+            _title = new Title(bookName);
+            _author = new Author(autor);
+            _content = new Content(content);
+        }
 
-		void Show()
-		{
-			Console.WriteLine($"{book} +  {autor} + {Content}");
-		}
-	}
-	class Title
-	{
-		public Title(string Title)
-		{
-			title = Title;
-		}
+        void Show()
+        {
+            _title.Show();
+            _author.Show();
+            _content.Show();
+        }
+    }
 
-		string title;
-	}
+    class Title : Base
+    {
+        public Title(string AuthorName) : base(AuthorName)
+        {
+            color = ConsoleColor.Cyan;
+        }
+    }
 
-	class Author
-	{
-		public Author(string AuthorName)
-		{
-			author = AuthorName;
-		}
+    class Author : Base
+    {
+        public Author(string AuthorName) : base(AuthorName)
+        {
+            color = ConsoleColor.Blue;
+        }
 
-		string author;
+    }
 
-		
-	}
+    class Content : Base
+    {
+        public Content(string AuthorName) : base(AuthorName)
+        {
+            color = ConsoleColor.Red;
+        }
+    }
 
-	class Content
-	{
-		public Content(string ContentName)
-		{
-			content = ContentName;
-		}
+    class Base
+    {
+        private string content;
+        protected ConsoleColor color = ConsoleColor.DarkRed;
 
-		string content;
+        public Base(string content)
+        {
+            this.content = content;
+        }
 
-		
-	}
+        public void Show()
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(content);
+        }
+    }
 }

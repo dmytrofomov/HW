@@ -4,6 +4,7 @@ namespace _9._3
 {
 	public delegate int MainDelegete(ChildDelegete[] array);
 	public delegate int ChildDelegete();
+	public delegate int fu(int i);
 
 	class Program
 	{
@@ -29,6 +30,7 @@ namespace _9._3
 			};
 			Console.WriteLine(main(arrayDelegate));
 			Console.Read();
+			fu f = u => u * 2;
 		}
 	}
 
@@ -39,6 +41,8 @@ namespace _9._3
 			Random rd = new Random();
 			return rd.Next();
 		}
+
+
 
 		
 	}
