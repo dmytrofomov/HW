@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace lesson3._3
 {
@@ -6,7 +7,23 @@ namespace lesson3._3
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
-		}
+			List<Vehicle> list = new List<Vehicle>();
+            list.Add(new Plane("1000000 $", "750", "1999", "3 M", "50"));
+            list.Add(new Car("10000 $", "200", "2009"));
+            list.Add(new Ship("100000 $", "150", "2009", "400", "Berdyansk"));
+
+		    foreach (var item in list)
+		    {
+		        Console.WriteLine($"Vehicle type - {item.GetType().Name} \n" +
+		                          $"Speed {item.Speed} \n" +
+		                          $"Year {item.Year}");
+
+		        if (item as Ship != null)
+		        {
+		            Console.WriteLine($"Port {(item as Ship).Port}");
+		        }
+		    }
+
+        }
 	}
 }

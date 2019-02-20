@@ -4,9 +4,9 @@ using System.Text;
 
 namespace lesson3._3
 {
-	class Саг : Vehicle
+	class Car : Vehicle
 	{
-		public Саг(string price, string speed, string year) : base(price, speed, year)
+		public Car(string price, string speed, string year) : base(price, speed, year)
 		{
 		}
 	}
