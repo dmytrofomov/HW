@@ -6,18 +6,23 @@ namespace lesson3._2
 {
 	class ClassRoom
 	{
-		private Pupil[] Pupils;
-		public ClassRoom(params Pupil[] pupils)
+	    private Pupil[] Pupils { get; }
+
+	    public ClassRoom(params Pupil[] pupils)
 		{
-			Pupils = new Pupil[4];
+
 			if(pupils.Length > 4)
 			{
 				Console.WriteLine("Only first 4 pupils in the line will be puted in this class");
-			}
-			
-			for (int i = 0; i < 4; i++)
+                Pupils = new Pupil[4];
+			    for (int i = 0; i < 4; i++)
+			    {
+			        Pupils[i] = pupils[i];
+			    }
+            }
+			else
 			{
-				Pupils[i] = pupils[i];
+			    Pupils = pupils;
 			}
 		}
 

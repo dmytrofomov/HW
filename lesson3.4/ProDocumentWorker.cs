@@ -11,6 +11,7 @@ namespace lesson3._4
 		{
 			Console.WriteLine("Документ отредактирован");
 		}
+
 		public override void SaveDocument()
 		{
 			Console.WriteLine("Документ сохранен в старом формате, сохранение в остальных форматах доступно в версии Эксперт");

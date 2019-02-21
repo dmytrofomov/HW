@@ -18,11 +18,16 @@ namespace lesson3._3
 		                          $"Speed {item.Speed} \n" +
 		                          $"Year {item.Year}");
 
-		        if (item as Ship != null)
+		        if (item is Ship ship)
 		        {
-		            Console.WriteLine($"Port {(item as Ship).Port}");
+		            Console.WriteLine($"Port {ship.Port}");
 		        }
-		    }
+
+		        if (item as Plane != null)
+		        {
+		            Console.WriteLine($"Port {(item as Plane).Passagers}");
+		        }
+            }
 
         }
 	}
