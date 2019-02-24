@@ -6,7 +6,6 @@ namespace lesson3._4
 {
 	class ProDocumentWorker : DocumentWorker
 	{
-		
 		public override void EditDocument()
 		{
 			Console.WriteLine("Документ отредактирован");

@@ -9,7 +9,6 @@ namespace lesson3._4
 		public virtual void OpenDocument()
 		{
 			Console.WriteLine("Документ открыт");
-			
 		}
 
 		public virtual void EditDocument()

@@ -6,7 +6,6 @@ namespace lesson3._4
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Enter key, pres Enter to use basic version");
             var key = Console.ReadLine();
             var doc = WorkWithDocument.GetDocument(key);

@@ -1,42 +1,57 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace lesson2._3
 {
     class Invoice
     {
-        readonly int account;
-        readonly string customer;
-        readonly string provider;
+        private Account CurrentAccount { get; set; }
 
-        public Invoice(string name)
+        public Invoice(int accountId)
         {
-            account = 54;
-            customer = name;
-            provider = "Provider";
+            CurrentAccount = GetAccountById(accountId);
         }
 
-        public int GetPriseWithNds(string article, int quantity)
+        public double? GetPriseWithNds(int article, int quantity)
         {
-            int price = 0;
-            if (article == "1")
-            {
-                price = 100;
-            }
-            if (article == "2")
-            {
-                price = 200;
-            }
-            else
-            {
-                Console.WriteLine("Wrong article");
-            }
-            return quantity * price;
+            int? price = GetPriceByArticle(article);
+            if (price == null)
+                throw new Exception("No such article");
+            else return (double) quantity * price;
         }
 
-        public int GetPriseWithoutNds(string article, int quantity)
+        public double? GetPriseWithoutNds(int article, int quantity)
         {
-            double v = GetPriseWithNds(article, quantity) * 0.8;
-            return (int)v;
+            return GetPriseWithNds(article, quantity) * 0.8;
         }
+
+        private int? GetPriceByArticle(int article)
+        {
+            if (DB.Articles.ContainsKey(article))
+                return DB.Articles[article];
+            else return null;
+        }
+
+        public Account GetAccountById(int id)
+        {
+            return DB.Accounts.FirstOrDefault(a => a.account == id);
+        }
+    }
+
+
+    public class Account
+    {
+        public Account(int account, string customer, string provider)
+        {
+            this.account = account;
+            this.customer = customer;
+            this.provider = provider;
+
+        }
+
+        public readonly int account;
+        public readonly string customer;
+        public readonly string provider;
     }
 }
