@@ -6,7 +6,15 @@ namespace lesson4._1
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
-		}
+            var h = new TXTHandler();
+            AbstractHandler ab = h;
+            ShowDocType(ab);
+            ab.Save();
+        }
+
+        static void ShowDocType(AbstractHandler doc)
+        {
+            Console.WriteLine(doc.CheckDocument());
+        }
 	}
 }

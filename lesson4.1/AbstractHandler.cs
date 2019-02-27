@@ -4,18 +4,16 @@ using System.Text;
 
 namespace lesson4._1
 {
-	abstract class AbstractHandler
-	{
-		public void Open()
-		{
-		}
-		public void Create()
-		{
-		}
-		public void Chenge()
-		{
-		}
+	public abstract class AbstractHandler 
+    {
+        public abstract void Open();
+
+        public abstract void Create();
+
+        public abstract void Chenge();
+
 		public abstract void Save();
 
-	}
+        public abstract string CheckDocument();
+    }
 }
