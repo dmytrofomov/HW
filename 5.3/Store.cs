@@ -46,7 +46,7 @@ namespace _5._3
 			{
 				if (number > indexer.Length - 1)
 				{
-					return "Out on renge";
+					return "Out on range";
 				}
 				return indexer[number].Name;
 			}

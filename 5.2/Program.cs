@@ -14,7 +14,7 @@ namespace _5._2
 			var m = matrix.CreateMatrix(8, 10);
 			matrix.ShowMatrix(m);
 			Console.WriteLine();
-			var dm = matrix.GetDerivativeMatrix(10, 5, m);
+			var dm = matrix.GetDerivativeMatrix(5, 5, m);
 			matrix.ShowMatrix(dm);
 			Console.Read();
 
